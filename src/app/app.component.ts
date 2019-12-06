@@ -6,5 +6,15 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'my-demo-app';
+  title:string = 'Angular';
+  name:string='Full Stack Session'
+today=new Date();
+
+
+clickMessage:string='Morning';
+onClickMe(){
+
+	console.log('event fired!!');
+	this.clickMessage='Training ! is Active';
+}
 }

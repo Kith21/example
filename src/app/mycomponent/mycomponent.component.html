@@ -1,0 +1,60 @@
+<!--<p>
+  mycomponent works!
+</p>
+<button (click)="onClickMe()">Submit</button>
+<p>{{clickMessage}}</p>-->
+<form ngForm>
+<div class="form-group">
+  <label for="name">Name</label>
+  <input type="text" class="form-control" id="name"
+         required
+         [(ngModel)]="model.name" name="name">
+</div>
+
+<div class="form-group">
+  <label for="age">Age1</label>
+  <input type="number"  class="form-control" id="age"
+         [(ngModel)]="model.age" name="age">
+</div>
+
+  <button type="submit" class="btn btn-primary" (click)="createCustomer()">Submit</button>
+  <button type="submit" class="btn btn-primary" (click)="updateCustomer()">Update</button>
+  
+
+</form>
+
+<div>
+	<ol>
+		
+		<li appListhighlight value="red" *ngFor='let cust of custArray'>
+			{{cust.name | lowercase}}<b>||</b>{{cust.age | testpipe:4}}
+			<button type="submit" class="btn btn-primary" (click)="deleteCustomer(index, cust)">Delete</button>
+			<button type="submit" class="btn btn-primary" (click)="edit(cust)">Edit</button>
+
+		</li>
+	</ol>
+</div>
+<button (click)="onTestGet()">getUsersDetails</button> 
+<div>
+	<ol>
+		<li appListhighlight     value="pink" *ngFor='let user of getData'>
+			{{ user.username }}<b>||</b> {{user.email}}
+		</li>
+	</ol>
+</div>
+
+<!--<h1  appListhighlight value="yellow">testing dynamic derictive</h1>
+
+<div ng-app="app">
+    <h4>Listing item from the collection</h4>
+    <div ng-controller="MemberController">
+        <ul>
+        	
+            <li ng-repeat="member in Members">
+                {{$index + 1}}.  Name: {{member.username }} | Address: {{ member.address}}
+            </li>
+        </ul>
+        <button ng-click="AddMember()">Add a member</button>
+    </div>
+</div>-->
+
